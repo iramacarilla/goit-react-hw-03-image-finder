@@ -17,10 +17,7 @@ export default class App extends Component {
     searchItem:'',
     largeImage: null,
   } 
-componentDidMount() {
-  //this.setState({loading: true});  
-  //this.fetchQuery('cat')
-  }
+
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchItem !== this.state.searchItem)
     {
@@ -71,6 +68,7 @@ componentDidMount() {
     const {error, loading, images, largeImage} = this.state;
     return (
       <>
+       {error &&  <Modal><p>Something went wrong</p></Modal>}
     <Searchbar onSubmit={this.handelSearchQuery}/>
      {loading && <Loading />}
     

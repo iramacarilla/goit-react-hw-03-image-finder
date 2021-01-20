@@ -1,28 +1,7 @@
 
-/*import React from 'react'
-import ImageGalleryItem from '../imageGalleryItem/ImageGalleryItem'
-
-class ImageGallery = ({images, onClick}) => {
-    componentDidMount() {
-        window.addEventListener('keydown', e => {
-            if (e.code === 'Escape') 
-            {
-                
-            }
-        })
-    }
-    return (
-        <ul className="ImageGallery">
-  <ImageGalleryItem images={images} onClick={onClick}/>
-</ul>
-    )
-}
-
-export default ImageGallery*/
-
-
 import React from 'react'
 import ImageGalleryItem from '../imageGalleryItem/ImageGalleryItem'
+import PropTypes from 'prop-types';
 
 const ImageGallery = ({images, onClick}) => {
     return (
@@ -31,5 +10,8 @@ const ImageGallery = ({images, onClick}) => {
 </ul>
     )
 }
-
+ImageGallery.propTypes = {
+    images: PropTypes.array.isRequired,
+    onClick: PropTypes.func.isRequired
+  }
 export default ImageGallery
