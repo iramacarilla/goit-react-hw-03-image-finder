@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import styles from './ImageGalleryItem.module.css'
 
 const ImageGalleryItem = ({images, onClick}) => {
     return (
@@ -7,7 +8,7 @@ const ImageGalleryItem = ({images, onClick}) => {
         { 
             images.map(image => 
              (
-         <li className="ImageGalleryItem" key={image.id}>
+         <li className={styles.ImageGalleryItem} key={image.id}>
        <img src={image.webformatURL} alt=""  className="ImageGalleryItem-image" data-source={image.largeImageURL} onClick={onClick}></img> 
      </li>
      )) }
